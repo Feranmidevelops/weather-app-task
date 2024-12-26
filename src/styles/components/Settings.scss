@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use "../variables/variables" as *;
 
 .Settings {
   display: flex;
@@ -6,22 +6,34 @@
 
   .theme-toggler {
     $size: 25px;
+
     .theme-buttons {
       cursor: pointer;
-
       display: flex;
       position: relative;
+      align-items: center;
+      justify-content: center;
       height: $size;
-      width: $size;
+      width:  calc($size * 2);
       overflow: hidden;
 
       .light-theme-btn,
       .dark-theme-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        top: $size;
-        transition: top 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+
         &.active {
-          top: 0;
+          visibility: visible;
+          opacity: 1;
+        }
+    
+        &:not(.active) {
+          visibility: hidden;
+          opacity: 0;
         }
       }
     }

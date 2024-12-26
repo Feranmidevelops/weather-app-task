@@ -4,7 +4,8 @@ $height: 250px;
   display: flex;
 
   @media screen and (max-width: 745px) {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .temperature,
@@ -33,12 +34,11 @@ $height: 250px;
   }
   .other-infos {
     flex: 1;
-    height: auto;
+    min-height: 250px;
     margin-left: 1rem;
-
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 
     @media screen and (max-width: 745px) {
@@ -56,15 +56,27 @@ $height: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
         .info {
           display: flex;
+          align-items: center;
           font-size: 1.25rem;
           margin-bottom: 0.5rem;
+
           .icon {
             margin-right: 0.5rem;
-          }
+            }
         }
+        .value {
+          font-size: 1rem;
+        }
+      }
+
+      .name {
+        margin-top: 0.5rem;
+        font-size: 1.25rem;
+        color: var(--secondary-text-color); 
       }
     }
   }

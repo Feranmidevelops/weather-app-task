@@ -11,6 +11,19 @@
     margin-top: 0.5rem;
     padding-top: 1.5rem;
 
+    .widget-container::-webkit-scrollbar {
+      height: 8px; /* Adjust scrollbar height */
+    }
+    
+    .widget-container::-webkit-scrollbar-thumb {
+      background: #ccc; /* Thumb color */
+      border-radius: 4px;
+    }
+    
+    .widget-container::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Track color */
+    }
+
     .widget {
       position: relative;
       cursor: pointer;

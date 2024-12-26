@@ -1,14 +1,14 @@
-@use '../variables/variables' as *;
+@use "../variables/variables" as *;
 
 .search-container {
   display: flex;
   border: 1px solid var(--secondary-text-color);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0 1rem;
 
   .search-icon,
   .search-input input {
-    height: 40px;
+    height: 35px;
   }
   .search-icon {
     display: flex;
