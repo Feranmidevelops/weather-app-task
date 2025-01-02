@@ -4,6 +4,12 @@ import HorizontalScroll from "./HorizontalScroll";
 
 
 function Forecast({ title, type, data }) {
+
+  if (!data || !Array.isArray(data)) {
+    console.error("Invalid data passed to Forecast:", data);
+    return <div>Error: Forecast data is not available</div>;
+}
+
   return (
     <div className="Forecast">
       <div className="forecast-container">

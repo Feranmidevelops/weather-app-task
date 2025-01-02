@@ -1,18 +1,23 @@
 import "../styles/components/Main.scss";
-import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
-import { getDailyForecast } from "../api";
-
-
+import CurrrentWeather from "./CurrentWeather";
+import { useContext } from "react";
+import WeatherContext from "../context/weather.context";
+import Loader from "./Loader";
 
 function Main() {
+  const { loading, CurrentWeather, DailyForecast } = useContext(WeatherContext);
+  console.log("Main", loading, CurrentWeather, DailyForecast);
   return (
     <div className="Main">
-        <CurrentWeather />
-        <Forecast 
-        type="daily" 
-        title="7 DAYS FORECAST"  
-        data={getDailyForecast()} />
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <CurrrentWeather data={CurrentWeather} />
+          <Forecast type="daily" title="DAILY FORECAST" data={DailyForecast} />
+        </>
+      )}
     </div>
   );
 }

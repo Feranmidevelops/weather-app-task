@@ -6,8 +6,13 @@ const THEME_KEY = "theme";
 function ThemeProvider({ children }) {
   const [dark, setDark] = useState(true);
 
+
+  const saveThemeToLocalStorage = (theme) => { 
+    localStorage.setItem(THEME_KEY, JSON.stringify(theme));
+  }
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem(THEME_KEY);
+    const savedTheme = JSON.parse(localStorage.getItem(THEME_KEY));
     if (savedTheme !== null) {
       setDark(savedTheme);
       return;
@@ -20,7 +25,7 @@ function ThemeProvider({ children }) {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ dark, setDark }}>
+    <ThemeContext.Provider value={{ dark, setDark, saveThemeToLocalStorage }}>
       {children}
     </ThemeContext.Provider>
   );
