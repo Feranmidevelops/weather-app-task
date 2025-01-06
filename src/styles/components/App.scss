@@ -5,6 +5,8 @@
 .App-light {
   background-color: var(--main-bg-color);
   color: var(--primary-text-color);
-
-  overflow: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease; // Smooth theme transition
+  overflow-y: auto;
+  overflow-x: hidden;
+  
 }

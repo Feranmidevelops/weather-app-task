@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use "../variables/variables" as *;
 
 .Forecast {
   margin-top: 2rem;
@@ -7,21 +7,22 @@
   .widget-container {
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     margin-top: 0.5rem;
     padding-top: 1.5rem;
 
     .widget-container::-webkit-scrollbar {
-      height: 8px; /* Adjust scrollbar height */
+      height: 6px;
     }
-    
+
     .widget-container::-webkit-scrollbar-thumb {
-      background: #ccc; /* Thumb color */
-      border-radius: 4px;
+      background: #ccc;
+      border-radius: 3px;
     }
-    
+
     .widget-container::-webkit-scrollbar-track {
-      background: #f1f1f1; /* Track color */
+      background: #f1f1f1;
     }
 
     .widget {
@@ -36,6 +37,7 @@
       margin-right: 0.75rem;
 
       min-width: 115px;
+      flex-shrink: 0;
 
       border: 1px solid var(--secondary-text-color);
       border-radius: 1rem;

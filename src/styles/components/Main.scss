@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use "../variables/variables" as *;
 
 .Main {
   margin: 0 7rem;
@@ -9,6 +9,6 @@
   overflow-x: hidden;
 
   @media only screen and (max-width: 821px) {
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
 }
